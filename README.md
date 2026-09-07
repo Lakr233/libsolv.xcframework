@@ -72,6 +72,11 @@ arm64 variants can have higher floors than older architectures.
 | watchOS Simulator | x86_64 / arm64 | 5.0 / 7.0 |
 | visionOS and Simulator | arm64 | 1.0 |
 
+For watchOS consumers, restrict device architectures to `arm64_32 arm64`
+(or exclude `armv7k` in the application build settings). Some Xcode versions
+include `armv7k` by default for a watchOS 5 target; that legacy architecture
+is not shipped. visionOS Simulator supports arm64 only.
+
 The test suite uses Swift Testing on macOS 13 / iOS 16 or later. These test
 requirements do not raise the library deployment target. Device slices are
 compiled and linked in CI; execution tests run on macOS and iOS Simulator.
