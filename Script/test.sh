@@ -12,8 +12,8 @@ for destination in \
     'generic/platform=watchOS' 'generic/platform=watchOS Simulator' \
     'generic/platform=visionOS' 'generic/platform=visionOS Simulator'; do
     label=$(echo "$destination" | tr -cs '[:alnum:]' '-')
-    arch_flags=()
-    if [[ "$destination" == *visionOS* ]]; then arch_flags=(ARCHS=arm64); fi
+    arch_flags=(ONLY_ACTIVE_ARCH=NO)
+    if [[ "$destination" == *visionOS* ]]; then arch_flags+=(ARCHS=arm64); fi
     for scheme in LibSolv LibSolvDynamic; do
         echo "Building $scheme: $destination"
         xcodebuild -scheme "$scheme" -destination "$destination" \
