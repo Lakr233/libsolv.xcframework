@@ -1,0 +1,20 @@
+--- a/src/repodata.c
++++ b/src/repodata.c
+@@ -255,7 +255,7 @@
+  */
+ 
+ #ifndef HAVE_STRCHRNUL
+-static inline const char *strchrnul(const char *str, char x)
++static inline const char *solv_strchrnul(const char *str, char x)
+ {
+   const char *p = strchr(str, x);
+   return p ? p : str + strlen(str);
+@@ -313,7 +313,7 @@
+ #endif
+   while (*dir)
+     {
+-      dire = strchrnul(dir, '/');
++      dire = solv_strchrnul(dir, '/');
+       if (dire - dir >= (size_t)0x40000000)
+ 	solv_ovfl("repodata dir component size overflow");
+       if (data->localpool)

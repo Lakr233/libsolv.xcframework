@@ -1,0 +1,790 @@
+apk.c
+/*
+ * Copyright (c) 2024, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+apk.h
+/*
+ * Copyright (c) 2024, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+bitmap.c
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+bitmap.h
+/*
+ * Copyright (c) 2007-2011, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+chksum.c
+/*
+ * Copyright (c) 2008-2026, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+chksum.h
+/*
+ * Copyright (c) 2007-2012, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+chksum_impl.c
+/*
+ * Copyright (c) 2026, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+cleandeps.c
+/*
+ * Copyright (c) 2017, SUSE Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+conda.c
+/*
+ * Copyright (c) 2019, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+conda.h
+/*
+ * Copyright (c) 2019, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+cplxdeps.c
+/*
+ * Copyright (c) 2014, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+cplxdeps.h
+/*
+ * Copyright (c) 2014, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+dataiterator.h
+/*
+ * Copyright (c) 2007-2012, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+decision.c
+/*
+ * Copyright (c) 2022, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+dirpool.c
+/*
+ * Copyright (c) 2008, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+dirpool.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+diskusage.c
+/*
+ * Copyright (c) 2007-2016, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+evr.c
+/*
+ * Copyright (c) 2007-2009, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+evr.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+filelistfilter.c
+/*
+ * Copyright (c) 2018, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+fileprovides.c
+/*
+ * Copyright (c) 2007-2016, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+hash.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+knownid.h
+/*
+ * Copyright (c) 2007-2014, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+linkedpkg.c
+/*
+ * Copyright (c) 2013, SUSE Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+linkedpkg.h
+/*
+ * Copyright (c) 2013, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+md5.c
+/*
+ * This is an OpenSSL-compatible implementation of the RSA Data Security,
+ * Inc. MD5 Message-Digest Algorithm.
+ *
+ * Written by Solar Designer <solar@openwall.com> in 2001, and placed in
+ * the public domain.
+ *
+ * This differs from Colin Plumb's older public domain implementation in
+ * that no 32-bit integer data type is required, there's no compile-time
+ * endianness configuration, and the function prototypes match OpenSSL's.
+ * The primary goals are portability and ease of use.
+ *
+ * This implementation is meant to be fast, but not as fast as possible.
+ * Some known optimizations are not included to reduce source code size
+ * and avoid compile-time configuration.
+ */
+
+md5.h
+/*
+ * This is an OpenSSL-compatible implementation of the RSA Data Security,
+ * Inc. MD5 Message-Digest Algorithm.
+ *
+ * Written by Solar Designer <solar@openwall.com> in 2001, and placed in
+ * the public domain.  See md5.c for more information.
+ */
+
+order.c
+/*
+ * Copyright (c) 2007-2015, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+policy.c
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+policy.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+pool.c
+/*
+ * Copyright (c) 2007-2009, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+pool.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+pool_private.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+poolarch.c
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+poolarch.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+pooldep.c
+/*
+ * Copyright (c) 2025, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+poolid.c
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+poolid.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+poollang.c
+/*
+ * Copyright (c) 2026 SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+pooltypes.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+poolvendor.c
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+poolvendor.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+poolwhatprovides.c
+/*
+ * Copyright (c) 2025, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+problems.c
+/*
+ * Copyright (c) 2007-2009, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+problems.h
+/*
+ * Copyright (c) 2007-2009, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+qsort_r.c
+/*
+ * qsort taken from FreeBSD, slightly modified to match glibc's
+ * argument ordering
+ */
+
+queue.c
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+queue.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+repo.c
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+repo.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+repo_solv.c
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+repo_solv.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+repo_write.c
+/*
+ * Copyright (c) 2007-2011, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+repo_write.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+repodata.c
+/*
+ * Copyright (c) 2018, SUSE LLC.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+repodata.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+repopack.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+repopage.c
+/*
+ * Copyright (c) 2007-2012, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+repopage.h
+/*
+ * Copyright (c) 2007-2011, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+rules.c
+/*
+ * Copyright (c) 2007-2017, SUSE Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+rules.h
+/*
+ * Copyright (c) 2007-2009, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+selection.c
+/*
+ * Copyright (c) 2012, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+selection.h
+/*
+ * Copyright (c) 2012, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+sha1.c
+/*
+SHA-1 in C
+By Steve Reid <sreid@sea-to-sky.net>
+100% Public Domain
+
+-----------------
+Modified 7/98
+By James H. Brown <jbrown@burgoyne.com>
+Still 100% Public Domain
+
+Corrected a problem which generated improper hash values on 16 bit machines
+Routine SHA1Update changed from
+	void SHA1Update(SHA1_CTX* context, unsigned char* data, unsigned int
+len)
+to
+	void SHA1Update(SHA1_CTX* context, unsigned char* data, unsigned
+long len)
+
+The 'len' parameter was declared an int which works fine on 32 bit machines.
+However, on 16 bit machines an int is too small for the shifts being done
+against
+it.  This caused the hash function to generate incorrect values if len was
+greater than 8191 (8K - 1) due to the 'len << 3' on line 3 of SHA1Update().
+
+Since the file IO in main() reads 16K at a time, any file 8K or larger would
+be guaranteed to generate the wrong hash (e.g. Test Vector #3, a million
+"a"s).
+
+I also changed the declaration of variables i & j in SHA1Update to
+unsigned long from unsigned int for the same reason.
+
+These changes should make no difference to any 32 bit implementations since
+an
+int and a long are the same size in those environments.
+
+--
+I also corrected a few compiler warnings generated by Borland C.
+1. Added #include <process.h> for exit() prototype
+2. Removed unused variable 'j' in SHA1Final
+3. Changed exit(0) to return(0) at end of main.
+
+ALL changes I made can be located by searching for comments containing 'JHB'
+-----------------
+Modified 8/98
+By Steve Reid <sreid@sea-to-sky.net>
+Still 100% public domain
+
+1- Removed #include <process.h> and used return() instead of exit()
+2- Fixed overwriting of finalcount in SHA1Final() (discovered by Chris Hall)
+3- Changed email address from steve@edmweb.com to sreid@sea-to-sky.net
+
+-----------------
+Modified 4/01
+By Saul Kravitz <Saul.Kravitz@celera.com>
+Still 100% PD
+Modified to run on Compaq Alpha hardware.
+
+-----------------
+Modified 07/2002
+By Ralph Giles <giles@ghostscript.com>
+Still 100% public domain
+modified for use with stdint types, autoconf
+code cleanup, removed attribution comments
+switched SHA1Final() argument order for consistency
+use SHA1_ prefix for public api
+move public api to sha1.h
+*/
+
+sha1.h
+/* public api for steve reid's public domain SHA-1 implementation */
+
+sha2.c
+/*
+ * FILE:	sha2.c
+ * AUTHOR:	Aaron D. Gifford <me@aarongifford.com>
+ *
+ * Copyright (c) 2000-2001, Aaron D. Gifford
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the copyright holder nor the names of contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTOR(S) ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTOR(S) BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ * $Id: sha2.c,v 1.1 2001/11/08 00:01:51 adg Exp adg $
+ */
+
+sha2.h
+/*
+ * FILE:	sha2.h
+ * AUTHOR:	Aaron D. Gifford <me@aarongifford.com>
+ *
+ * Copyright (c) 2000-2001, Aaron D. Gifford
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the copyright holder nor the names of contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTOR(S) ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTOR(S) BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ *
+ * $Id: sha2.h,v 1.1 2001/11/08 00:02:01 adg Exp adg $
+ */
+
+solvable.c
+/*
+ * Copyright (c) 2008, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+solvable.h
+/*
+ * Copyright (c) 2007-2012, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+solver.c
+/*
+ * Copyright (c) 2007-2008, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+solver.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+solver_private.h
+/*
+ * Copyright (c) 2011, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+solver_util.c
+/*
+ * Copyright (c) 2017, SUSE Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+solverdebug.c
+/*
+ * Copyright (c) 2008, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+solverdebug.h
+/*
+ * Copyright (c) 2008, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+solvversion.c
+/*
+ * Copyright (c) 2009, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+strpool.c
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+strpool.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+suse.c
+/*
+ * Copyright (c) 2016, SUSE LLC.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+transaction.c
+/*
+ * Copyright (c) 2007-2015, SUSE LLC
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+transaction.h
+/*
+ * Copyright (c) 2007-2009, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+userinstalled.c
+/*
+ * Copyright (c) 2017, SUSE LLC.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+util.c
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */
+
+util.h
+/*
+ * Copyright (c) 2007, Novell Inc.
+ *
+ * This program is licensed under the BSD license, read LICENSE.BSD
+ * for further information
+ */

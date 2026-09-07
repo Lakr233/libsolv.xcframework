@@ -1,0 +1,8 @@
+build/
+BinaryTarget/
+.build/
+.swiftpm/
+*.xcresult
+.DS_Store
+
+*.log

@@ -1,0 +1,142 @@
+name: Build libsolv
+on:
+  workflow_dispatch:
+    inputs:
+      upstream:
+        type: choice
+        options: [pinned, latest]
+        default: pinned
+      package_version:
+        description: 'Release version; empty selects next patch'
+        type: string
+        default: ''
+      skip_release:
+        type: boolean
+        default: false
+  schedule:
+    - cron: '31 5 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: publish-libsolv
+  cancel-in-progress: false
+env:
+  DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+jobs:
+  plan:
+    runs-on: macos-15
+    outputs:
+      needed: ${{ steps.plan.outputs.needed }}
+      storage: ${{ steps.plan.outputs.storage }}
+      package: ${{ steps.plan.outputs.package }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: plan
+        env:
+          UPSTREAM: ${{ inputs.upstream }}
+          VERSION: ${{ inputs.package_version }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          if [ "$UPSTREAM" = latest ] || [ "$EVENT" = schedule ]; then
+            ./Script/resolve-upstream.sh latest --write
+          fi
+          storage=$(./Script/next-tag.sh upstream)
+          package=${VERSION:-$(./Script/next-tag.sh package)}
+          [[ "$package" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          needed=true
+          if [ "$EVENT" = schedule ] && [ "${storage##*.}" != 1 ]; then needed=false; fi
+          echo "needed=$needed" >> "$GITHUB_OUTPUT"
+          echo "storage=$storage" >> "$GITHUB_OUTPUT"
+          echo "package=$package" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: upstream-pin
+          path: Upstream.versions
+  build:
+    needs: plan
+    if: needs.plan.outputs.needed == 'true'
+    runs-on: macos-15
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [macos, ios, tvos, watchos, visionos]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: upstream-pin
+      - run: brew install cmake ninja
+      - run: ./Script/build-platform.sh '${{ matrix.platform }}' ./build/dest
+      - run: tar -cf build-${{ matrix.platform }}.tar -C build/dest .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.platform }}
+          path: build-${{ matrix.platform }}.tar
+  verify:
+    needs: [plan, build]
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: upstream-pin
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: build-*
+          merge-multiple: true
+          path: build/tarballs
+      - run: |
+          mkdir -p build/dest
+          for archive in build/tarballs/*.tar; do tar -xf "$archive" -C build/dest; done
+          ./Script/merge-xcframework.sh build/dest build/CLibSolv.xcframework.zip
+          python3 Script/verify-binary.py
+      - run: ./Script/test.sh
+      - run: swift test --sanitize address
+      - run: ./Script/test-simulator.sh
+      - name: Record build provenance
+        run: |
+          {
+            echo "Repository: $GITHUB_REPOSITORY"
+            echo "Build commit: $GITHUB_SHA"
+            echo "Workflow: https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            xcodebuild -version
+            cat Upstream.versions
+            shasum -a 256 Vendor/*.patch build/CLibSolv.xcframework.zip
+          } > build/BUILD-INFO.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-release
+          path: |
+            build/CLibSolv.xcframework.zip
+            build/BUILD-INFO.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-logs
+          path: build/logs
+  release:
+    needs: [plan, verify]
+    if: inputs.skip_release != true
+    runs-on: macos-15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: upstream-pin
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-release
+          path: build/release
+      - name: Publish verified binary and matching package
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STORAGE_TAG: ${{ needs.plan.outputs.storage }}
+          PACKAGE_TAG: ${{ needs.plan.outputs.package }}
+        run: ./Script/release.sh
+      - name: Consume released package from a clean directory
+        run: ./Script/test-remote.sh '${{ needs.plan.outputs.package }}'

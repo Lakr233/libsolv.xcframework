@@ -1,0 +1,21 @@
+#ifndef CLIBSOLV_H
+#define CLIBSOLV_H
+#include "pool.h"
+#include "poolid.h"
+#include "poolarch.h"
+#include "repo.h"
+#include "solvable.h"
+#include "solver.h"
+#include "problems.h"
+#include "transaction.h"
+#include "evr.h"
+#include "selection.h"
+#include "repo_solv.h"
+#include "repo_write.h"
+#include "solvversion.h"
+#include "solverdebug.h"
+#include "chksum.h"
+#include "util.h"
+#include "policy.h"
+#include "poolvendor.h"
+#endif
