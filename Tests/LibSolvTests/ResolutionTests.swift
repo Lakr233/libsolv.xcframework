@@ -62,6 +62,21 @@ func installedUpdateRemoveAndLock() throws {
 }
 
 @Test @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
+func verifyFixesWhatWasBrokenBefore() throws {
+    let (solver, repo) = try environment()
+    let installed = try solver.addRepository(name: "installed")
+    try solver.setInstalledRepository(installed)
+    let library = try solver.addPackage(definition("library", "2"), to: installed)
+    let old = try solver.addPackage(definition("app", requires: [.versioned("library", .equal, "1")]), to: installed)
+    let new = try solver.addPackage(definition("app", "2", requires: [.versioned("library", .equal, "2")]), to: repo)
+    let tool = try solver.addPackage(definition("tool", requires: [.named("missing")]), to: installed)
+    let missing = try solver.addPackage(definition("missing"), to: repo)
+    #expect(Set(try solver.solve([]).installed.map(\.id)) == [library, old, tool])
+    #expect(Set(try solver.solve([Job(.verify, .all)]).installed.map(\.id)) == [library, new, tool, missing])
+    #expect(Set(try solver.solve([Job(.verify, .package(tool))]).installed.map(\.id)) == [library, old, tool, missing])
+}
+
+@Test @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
 func backtracksAroundConflicts() throws {
     let (solver, repo) = try environment()
     var first = definition("first")

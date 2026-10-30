@@ -40,10 +40,12 @@ for package in result.installed {
 
 Create another repository and call `setInstalledRepository` to model the current
 installation. `Job(.update, .all)` requests updates; `.remove` and `.lock` accept
-the same selections. Set options for uninstall and downgrade permission,
-recommendations, and strict repository priority. Defaults keep libsolv's
-recommendation behavior, forbid implicit uninstall and downgrade, and leave
-strict repository priority off.
+the same selections. libsolv leaves an installed package whose dependencies were
+already broken as it is; `Job(.verify, .all)` makes the solver fix them, and
+`.verify` takes the same selections too. Set options for uninstall and downgrade
+permission, recommendations, and strict repository priority. Defaults keep
+libsolv's recommendation behavior, forbid implicit uninstall and downgrade, and
+leave strict repository priority off.
 
 A `SolverEnvironment` is **not Sendable**. Keep
 it within one thread or task. Independent environments can solve concurrently.
