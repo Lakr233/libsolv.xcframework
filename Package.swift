@@ -5,7 +5,7 @@ let local = "BinaryTarget/CLibSolv.xcframework"
 let exists = FileManager.default.fileExists(atPath: URL(fileURLWithPath: #filePath).deletingLastPathComponent().appendingPathComponent(local).path)
 let binary: Target = exists
     ? .binaryTarget(name: "CLibSolv", path: local)
-    : .binaryTarget(name: "CLibSolv", url: "https://github.com/Lakr233/libsolv.xcframework/releases/download/upstream.fa356d935450.1/CLibSolv.xcframework.zip", checksum: "d0473ab756dbdb7a121f23d10f753128b2436edf2a03fd8c4e38964f0bbbc3cf")
+    : .binaryTarget(name: "CLibSolv", url: "https://github.com/Lakr233/libsolv.xcframework/releases/download/upstream.fa356d935450.2/CLibSolv.xcframework.zip", checksum: "6c366a3c04995f56966eb5355857579a0927a17a20074df4a2a24eebab16513d")
 let package = Package(
     name: "LibSolv",
     platforms: [.macOS(.v10_13), .macCatalyst("13.1"), .iOS(.v12), .tvOS(.v12), .watchOS(.v5), .visionOS(.v1)],
